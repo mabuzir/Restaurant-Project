@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Playfair Display";
+    src: url("/project2026/Font/PlayfairDisplay-VariableFont_wght.ttf");
+}
+
+.root {
+    -fx-font-family: "Playfair Display";
+    -fx-font-smoothing-type: lcd;
+}

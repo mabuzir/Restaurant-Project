@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox style="-fx-background-color: #F5EFE6;" stylesheets="@../style-font.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OrdersController">
+   <children>
+      <VBox prefWidth="200.0" spacing="4.0" style="-fx-background-color: #3E2723; -fx-padding: 20 14 20;">
+         <children>
+            <VBox style="-fx-padding: 0 0 14 6; -fx-border-color: #5A3520; -fx-border-width: 0 0 1 0;">
+               <children>
+                  <Label style="-fx-text-fill: #FAC775; -fx-font-size: 20; -fx-font-weight: bold;" text="Code &amp; Coffee" />
+                  <Label fx:id="lbl_role" style="-fx-text-fill: #B07A55; -fx-font-size: 12;" text="Manager Dashboard" />
+               </children>
+            </VBox>
+            <Region prefHeight="6.0" />
+            <Button fx:id="btn_dashboard" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btn_dashboard_handler" style="-fx-background-color: transparent; -fx-text-fill: #C9956A; -fx-font-size: 13; -fx-alignment: CENTER-LEFT; -fx-padding: 9 12; -fx-cursor: hand;" text="Dashboard" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: #C67C4E; -fx-text-fill: white; -fx-font-size: 13; -fx-alignment: CENTER-LEFT; -fx-padding: 9 12; -fx-cursor: hand; -fx-background-radius: 8;" text="Orders" />
+            <Button fx:id="btn_menu" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btn_menu_handler" style="-fx-background-color: transparent; -fx-text-fill: #C9956A; -fx-font-size: 13; -fx-alignment: CENTER-LEFT; -fx-padding: 9 12; -fx-cursor: hand;" text="Menu" />
+            <Separator prefWidth="200.0" />
+            <Button fx:id="btn_customers" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btn_customers_handler" style="-fx-background-color: transparent; -fx-text-fill: #C9956A; -fx-font-size: 13; -fx-alignment: CENTER-LEFT; -fx-padding: 9 12; -fx-cursor: hand;" text="Customers" />
+            <Button fx:id="btn_employees" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btn_employees_handler" style="-fx-background-color: transparent; -fx-text-fill: #C9956A; -fx-font-size: 13; -fx-alignment: CENTER-LEFT; -fx-padding: 9 12; -fx-cursor: hand;" text="Employees" />
+            <Region VBox.vgrow="ALWAYS" />
+            <Separator prefWidth="200.0" />
+            <Button fx:id="btn_logout" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#logout_handler" style="-fx-background-color: transparent; -fx-text-fill: #C9956A; -fx-font-size: 13; -fx-alignment: CENTER-LEFT; -fx-padding: 9 12; -fx-cursor: hand;" text="Logout" />
+         </children>
+      </VBox>
+      <VBox spacing="16.0" style="-fx-background-color: #F5EFE6; -fx-padding: 24 24 24;" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label style="-fx-text-fill: #3E2723; -fx-font-size: 20; -fx-font-weight: bold;" text="Orders" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btn_add_order" mnemonicParsing="false" onAction="#add_order_handler" style="-fx-background-color: #C67C4E; -fx-text-fill: white; -fx-font-size: 13; -fx-padding: 9 16; -fx-background-radius: 8; -fx-cursor: hand;" text="New Order">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="btn_remove_order" mnemonicParsing="false" onAction="#remove_order_handler" style="-fx-background-color: #C67C4E; -fx-text-fill: white; -fx-font-size: 13; -fx-padding: 9 16; -fx-background-radius: 8; -fx-cursor: hand;" text="Remove Order" />
+               </children>
+            </HBox>
+            <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="search_field" prefWidth="300.0" promptText="Search by customer or ID..." style="-fx-background-color: white; -fx-border-color: #E0D0BE; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 8 12; -fx-font-size: 13;" />
+                  <ComboBox fx:id="filter_status" promptText="Filter by status" style="-fx-background-color: white; -fx-border-color: #E0D0BE; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 4; -fx-font-size: 13;" />
+               </children>
+            </HBox>
+            <VBox spacing="0.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-border-width: 1; -fx-border-radius: 12; -fx-border-color: #E0D0BE;" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox spacing="10.0" style="-fx-padding: 12 16; -fx-border-color: transparent transparent #E0D0BE transparent; -fx-border-width: 0 0 1 0; -fx-background-color: #F5EFE6; -fx-background-radius: 12 12 0 0;">
+                     <children>
+                        <Label prefWidth="60.0" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #9A6A45;" text="#ID" />
+                        <Label prefWidth="150.0" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #9A6A45;" text="Customer" />
+                        <Label style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #9A6A45;" text="Items" HBox.hgrow="ALWAYS" />
+                        <Label prefWidth="100.0" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #9A6A45;" text="Total" />
+                        <Label prefWidth="100.0" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #9A6A45;" text="Status" />
+                        <Label prefWidth="80.0" style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #9A6A45;" text="Actions" />
+                     </children>
+                  </HBox>
+                  <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent; -fx-border-color: transparent;" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox fx:id="orders_VBox" spacing="0.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>
