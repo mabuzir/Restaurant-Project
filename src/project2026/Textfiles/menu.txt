@@ -1,4 +1,0 @@
-1,Pizza,FOOD,12.99
-2,Burger,FOOD,8.99
-3,Coffee,DRINK,3.49
-4,OJ,DRINK,2.99
